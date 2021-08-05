@@ -1,5 +1,5 @@
 INSTALL_BIN = /usr/local/bin/
-CXXFLAGS += -std=c++11 -Wall -Wextra -Werror -Wstrict-prototypes
+CXXFLAGS += -std=c++11 -pedantic -Wall -Wextra -Werror -Wunused -Wconversion
 
 ifdef DEBUG
 	override DEBUG=-g

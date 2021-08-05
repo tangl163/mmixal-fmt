@@ -38,19 +38,18 @@ parse(std::string &line)
     Oprand oprand;
     Comment comment;
 
-    int pos = line.size() - 1;
+    auto pos = line.rbegin();
 
     // Right trim
-    while (std::isspace(line[pos]) && pos >= 0) {
-        --pos;
+    while (std::isspace(*pos) && pos != line.rend()) {
+        ++pos;
     }
+    line.erase(pos.base(), line.end());
 
     // The whole line is blank
-    if (line.empty() || pos < 0) {
+    if (line.empty()) {
         ins->emplace_back("", true);
         goto Done;
-    } else {
-        line.erase(pos+1);
     }
 
     for (decltype(line.size()) i = 0; i < line.size(); ++i) {
@@ -83,8 +82,12 @@ parse(std::string &line)
                     goto Done;
                 }
 
-                // Convert all opcode to uppercase
-                opcode.push_back(std::toupper(line[i]));
+                // Convert opcode to uppercase
+                if (line[i] >= 'a' && line[i] <= 'z') {
+                    opcode.push_back(line[i] - 'a' + 'A');
+                } else {
+                    opcode.push_back(line[i]);
+                }
             }
             break;
         case OPRAND:
