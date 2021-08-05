@@ -122,6 +122,13 @@ parse(std::string &line)
                     } else {
                         flags |= IN_SINGLE_QUOTES;
                     }
+                } else if (line[i] == ';') {
+                    // The end of oprand
+                    if (!(flags & IN_QUOTES)) {
+                        --i;
+                        flags = (flags & ~OPRAND) | COMMENT;
+                        break;
+                    }
                 }
 
                 oprand.push_back(line[i]);
