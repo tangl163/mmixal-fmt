@@ -46,12 +46,31 @@ jj  GREG  0                 Comment
     TRAP  0,Halt,0
 ```
 
-> Everyone with more than a casual interest  in computers will probably get to know
-at least one machine language sooner or later.
-Machine language helps programmers understand what really goes on inside their computers.
-And once one machine language has been learned, the characteristics
-of another are easy to assimilate.
-Computer science is largely concerned with an understanding of how low-level
-details make it possible to achieve high-level goals.
+And this
 
-By [Donald Knuth](https://en.wikipedia.org/wiki/Donald_Knuth)
+```mmix
+t is $255
+    LOC Data_Segment
+    Greg @ Base Address
+string BYTE "Hello, World!",#a,0
+
+    LOc #100
+Main LDA t,string
+    TRAP 0,Fputs,StdOut
+    Trap 0,Halt,0
+```
+
+Will be formatted as
+
+```mmix
+t       IS    $255
+        LOC   Data_Segment
+        GREG  @                     Base Address
+string  BYTE  "Hello, World!",#a,0
+
+        LOC   #100
+Main    LDA   t,string
+        TRAP  0,Fputs,StdOut
+        TRAP  0,Halt,0
+```
+
