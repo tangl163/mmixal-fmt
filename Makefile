@@ -2,7 +2,7 @@ INSTALL_BIN = /usr/local/bin/
 CXXFLAGS += -std=c++11 -pedantic -Wall -Wextra -Werror -Wunused -Wconversion
 
 ifdef DEBUG
-	override DEBUG=-g
+	override DEBUG = -g
 endif
 
 mmixal-fmt: mmixal-fmt.cc
