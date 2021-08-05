@@ -45,3 +45,13 @@ jj  GREG  0                 Comment
     PBNZ  t,3B
     TRAP  0,Halt,0
 ```
+
+> Everyone with more than a casual interest  in computers will probably get to know
+at least one machine language sooner or later.
+Machine language helps programmers understand what really goes on inside their computers.
+And once one machine language has been learned, the characteristics
+of another are easy to assimilate.
+Computer science is largely concerned with an understanding of how low-level
+details make it possible to achieve high-level goals.
+
+By [Donald Knuth](https://en.wikipedia.org/wiki/Donald_Knuth)
