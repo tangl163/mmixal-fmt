@@ -12,7 +12,7 @@ By default, the `mmixal-fmt` will be installed in `/usr/local/bin/`
 ### Usage
 
 `mmixal-fmt` will read **MMIXAL** ([**MMIX**](https://mmix.cs.hm.edu/index.html) Assemble Language)
-from `stdin` and output to the `stdout`. In fact, this tool is intended to integrate with vim.
+from `stdin` and output to the `stdout`. In fact, this tool is intended to integrate with this [vim plugin](https://github.com/tangl163/vim-mmixal-fmt).
 
 
 Assuming below is what `mmix.mms` contains
